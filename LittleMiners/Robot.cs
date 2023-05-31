@@ -10,6 +10,7 @@ namespace LittleMiners
     public abstract class Robot
     {
         public PointF mapLocation;
+        public PointF absoluteLocation;
         public Robot()
         {
 
@@ -18,6 +19,7 @@ namespace LittleMiners
         public void SetOnMap(PointF toSet)
         {
             mapLocation = toSet;
+            absoluteLocation = new PointF(toSet.X * Tile.dx, toSet.Y * Tile.dy);
         }
 
         public abstract void Draw(Graphics handler);
